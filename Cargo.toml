@@ -1,0 +1,45 @@
+[package]
+name = "hlavi-agent"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mmuhlari Holdings"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/mmuhlariholdings/hlavi-agent"
+homepage = "https://hlavi.com"
+description = "AI agent orchestration for Hlavi kanban task management"
+rust-version = "1.75"
+
+[lib]
+name = "hlavi_agent"
+path = "src/lib.rs"
+
+[dependencies]
+# Core library
+# hlavi-core = { git = "https://github.com/mmuhlariholdings/hlavi-core" }
+hlavi-core = { path = "../hlavi-core" }
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# HTTP client for API calls
+reqwest = { version = "0.11", features = ["json"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Configuration
+config = "0.14"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockito = "1.2"
