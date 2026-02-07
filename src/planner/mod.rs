@@ -3,16 +3,16 @@ use hlavi_core::domain::ticket::Ticket;
 
 /// Task planner that generates acceptance criteria for tickets
 pub struct Planner {
-    config: AgentConfig,
+    _config: AgentConfig,
 }
 
 impl Planner {
     pub fn new(config: AgentConfig) -> Self {
-        Self { config }
+        Self { _config: config }
     }
 
     /// Generates acceptance criteria for a ticket based on its title and description
-    pub async fn generate_plan(&self, ticket: &Ticket) -> Result<Vec<String>> {
+    pub async fn generate_plan(&self, _ticket: &Ticket) -> Result<Vec<String>> {
         // TODO: Implement AI-powered planning
         // This will call the configured model API to generate acceptance criteria
         // based on the ticket title and description

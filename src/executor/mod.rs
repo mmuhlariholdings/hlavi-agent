@@ -3,7 +3,7 @@ use hlavi_core::domain::ticket::Ticket;
 
 /// Task executor that completes acceptance criteria
 pub struct Executor {
-    config: AgentConfig,
+    _config: AgentConfig,
     mode: AgentMode,
     state: AgentState,
 }
@@ -11,7 +11,7 @@ pub struct Executor {
 impl Executor {
     pub fn new(config: AgentConfig, mode: AgentMode) -> Self {
         Self {
-            config,
+            _config: config,
             mode,
             state: AgentState::Idle,
         }
@@ -25,7 +25,7 @@ impl Executor {
     /// Executes a single acceptance criterion
     pub async fn execute_criterion(
         &mut self,
-        ticket: &Ticket,
+        _ticket: &Ticket,
         criterion_id: usize,
     ) -> Result<ExecutionResult> {
         self.state = AgentState::Executing;
