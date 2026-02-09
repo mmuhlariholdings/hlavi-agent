@@ -16,7 +16,7 @@ path = "src/lib.rs"
 [dependencies]
 # Core library - using git dependency with tag for version control
 # Update to tag when a new version is released
-hlavi-core = { git = "https://github.com/mmuhlariholdings/hlavi-core", tag = "v0.1.5" }
+hlavi-core = { git = "https://github.com/mmuhlariholdings/hlavi-core", tag = "v0.1.14" }
 
 # Async runtime
 tokio = { version = "1.35", features = ["full"] }
