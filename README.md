@@ -1,6 +1,6 @@
 # hlavi-agent
 
-AI agent orchestration for automating Hlavi kanban ticket completion.
+AI agent orchestration for automating Hlavi kanban task completion.
 
 ## Table of Contents
 
