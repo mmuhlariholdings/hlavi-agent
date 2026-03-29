@@ -1,5 +1,5 @@
 use crate::{config::AgentConfig, error::Result};
-use hlavi_core::domain::ticket::Ticket;
+use hlavi_core::domain::task::Task;
 
 /// Task planner that generates acceptance criteria for tickets
 pub struct Planner {
@@ -12,7 +12,7 @@ impl Planner {
     }
 
     /// Generates acceptance criteria for a ticket based on its title and description
-    pub async fn generate_plan(&self, _ticket: &Ticket) -> Result<Vec<String>> {
+    pub async fn generate_plan(&self, _ticket: &Task) -> Result<Vec<String>> {
         // TODO: Implement AI-powered planning
         // This will call the configured model API to generate acceptance criteria
         // based on the ticket title and description

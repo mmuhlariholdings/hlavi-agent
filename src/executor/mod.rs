@@ -1,5 +1,5 @@
 use crate::{config::AgentConfig, error::Result, AgentMode, AgentState};
-use hlavi_core::domain::ticket::Ticket;
+use hlavi_core::domain::task::Task;
 
 /// Task executor that completes acceptance criteria
 pub struct Executor {
@@ -25,7 +25,7 @@ impl Executor {
     /// Executes a single acceptance criterion
     pub async fn execute_criterion(
         &mut self,
-        _ticket: &Ticket,
+        _ticket: &Task,
         criterion_id: usize,
     ) -> Result<ExecutionResult> {
         self.state = AgentState::Executing;
@@ -51,7 +51,7 @@ impl Executor {
     }
 
     /// Completes all acceptance criteria for a ticket
-    pub async fn execute_ticket(&mut self, ticket: &Ticket) -> Result<Vec<ExecutionResult>> {
+    pub async fn execute_ticket(&mut self, ticket: &Task) -> Result<Vec<ExecutionResult>> {
         let mut results = Vec::new();
 
         for ac in &ticket.acceptance_criteria {
